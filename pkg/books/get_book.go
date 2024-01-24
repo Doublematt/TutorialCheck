@@ -3,7 +3,7 @@ package books
 import (
     "net/http"
 
-    "github.com/<YOUR-USERNAME>/go-gin-postgresql-api/pkg/common/models"
+    "github.doublematt.tutorialcheck/TutorialCheck/pkg/common/model"
     "github.com/gin-gonic/gin"
 )
 
