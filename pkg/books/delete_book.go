@@ -1,23 +1,23 @@
 package books
 
 import (
-    "net/http"
+	"net/http"
 
-    "github.doublematt.tutorialcheck/TutorialCheck/pkg/common/model"
-    "github.com/gin-gonic/gin"
+	"github.com/Doublematt/TutorialCheck/pkg/common/model"
+	"github.com/gin-gonic/gin"
 )
 
 func (h handler) DeleteBook(ctx *gin.Context) {
-    id := ctx.Param("id")
+	id := ctx.Param("id")
 
-    var book models.Book
+	var book models.Book
 
-    if result := h.DB.First(&book, id); result.Error != nil {
-        ctx.AbortWithError(http.StatusNotFound, result.Error)
-        return
-    }
+	if result := h.DB.First(&book, id); result.Error != nil {
+		ctx.AbortWithError(http.StatusNotFound, result.Error)
+		return
+	}
 
-    h.DB.Delete(&book)
+	h.DB.Delete(&book)
 
-    ctx.Status(http.StatusOK)
+	ctx.Status(http.StatusOK)
 }

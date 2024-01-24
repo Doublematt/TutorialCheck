@@ -1,39 +1,39 @@
 package books
 
 import (
-    "net/http"
+	"net/http"
 
-    "github.doublematt.tutorialcheck/TutorialCheck/pkg/common/model"
-    "github.com/gin-gonic/gin"
+	"github.com/Doublematt/TutorialCheck/pkg/common/model"
+	"github.com/gin-gonic/gin"
 )
 
 type UpdateBookRequestBody struct {
-    Title       string `json:"title"`
-    Author      string `json:"author"`
-    Description string `json:"description"`
+	Title       string `json:"title"`
+	Author      string `json:"author"`
+	Description string `json:"description"`
 }
 
 func (h handler) UpdateBook(ctx *gin.Context) {
-    id := ctx.Param("id")
-    body := UpdateBookRequestBody{}
+	id := ctx.Param("id")
+	body := UpdateBookRequestBody{}
 
-    if err := ctx.BindJSON(&body); err != nil {
-        ctx.AbortWithError(http.StatusBadRequest, err)
-        return
-    }
+	if err := ctx.BindJSON(&body); err != nil {
+		ctx.AbortWithError(http.StatusBadRequest, err)
+		return
+	}
 
-    var book models.Book
+	var book models.Book
 
-    if result := h.DB.First(&book, id); result.Error != nil {
-        ctx.AbortWithError(http.StatusNotFound, result.Error)
-        return
-    }
+	if result := h.DB.First(&book, id); result.Error != nil {
+		ctx.AbortWithError(http.StatusNotFound, result.Error)
+		return
+	}
 
-    book.Title = body.Title
-    book.Author = body.Author
-    book.Description = body.Description
+	book.Title = body.Title
+	book.Author = body.Author
+	book.Description = body.Description
 
-    h.DB.Save(&book)
+	h.DB.Save(&book)
 
-    ctx.JSON(http.StatusOK, &book)
+	ctx.JSON(http.StatusOK, &book)
 }

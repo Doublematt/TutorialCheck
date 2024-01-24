@@ -1,8 +1,8 @@
 package books
 
 import (
+	"github.com/Doublematt/TutorialCheck/pkg/common/model"
 	"github.com/gin-gonic/gin"
-	"github.doublematt.tutorialcheck/TutorialCheck/pkg/common/model"
 	"net/http"
 )
 

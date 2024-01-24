@@ -3,8 +3,8 @@ package books
 import (
 	"net/http"
 
+	"github.com/Doublematt/TutorialCheck/pkg/common/model"
 	"github.com/gin-gonic/gin"
-	"github.doublematt.tutorialcheck/TutorialCheck/pkg/common/model"
 )
 
 func (h handler) GetBooks(ctx *gin.Context) {
