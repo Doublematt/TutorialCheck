@@ -1,4 +1,4 @@
-module Trial1
+module github.com/Doublematt/TutorialCheck
 
 go 1.20
 
