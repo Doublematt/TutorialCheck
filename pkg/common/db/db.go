@@ -1,7 +1,7 @@
 package db
 
 import (
-	"github.doublematt.tutorialcheck/Tutorialcheck/pkg/common/model"
+	"github.com/Doublematt/TutorialCheck/pkg/common/model"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"log"
