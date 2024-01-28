@@ -1,9 +1,10 @@
 package books
 
 import (
-	"github.com/Doublematt/TutorialCheck/pkg/common/model"
-	"github.com/gin-gonic/gin"
+	models "TutorialCheck/pkg/common/model"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 type AddBookRequestBody struct {

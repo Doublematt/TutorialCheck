@@ -1,8 +1,10 @@
 package main
 
 import (
-	"github.com/Doublematt/TutorialCheck/pkg/books"
-	"github.com/Doublematt/TutorialCheck/pkg/common/db"
+	"TutorialCheck/pkg/books"
+
+	"TutorialCheck/pkg/common/db"
+
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )

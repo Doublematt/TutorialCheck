@@ -1,10 +1,11 @@
 package db
 
 import (
-	"github.com/Doublematt/TutorialCheck/pkg/common/model"
+	models "TutorialCheck/pkg/common/model"
+	"log"
+
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	"log"
 )
 
 func Init(url string) *gorm.DB {
